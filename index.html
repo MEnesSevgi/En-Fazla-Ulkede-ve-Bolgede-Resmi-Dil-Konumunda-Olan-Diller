@@ -406,7 +406,7 @@ function updateMap(type) {
   // Harita için markerları ekle
   countries.forEach(country => {
     const marker = L.marker([country.lat, country.lng]).addTo(map);
-    marker.bindPopup(`<b>${country.name}</b><br>Nüfus: ${country.population}`);
+    marker.bindPopup(`<b>${country.name}</b><br>Nüfus: ${country.population}<br>Dil: ${country.language}</b>`);   :
     marker.on('click', () => {
       showWikiPage(country.name);
     });
