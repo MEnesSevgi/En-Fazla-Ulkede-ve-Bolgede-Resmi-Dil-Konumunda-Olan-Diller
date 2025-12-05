@@ -113,7 +113,7 @@
        <option value="german">Almanca</option>
       <option value="russian">Rusça</option>
        <option value="Turkish">Türkçe</option> 
-    
+     <option value="chinese">Çince</option> 
       <!-- Diğer diller eklenecek -->
     </select>
   </div>
@@ -328,6 +328,13 @@ const portugueseSpeakingCountries = [
   
   // 5. BOLGAR GRUBU (Rusya)
   {name: "Çuvaşistan", lat: 55.4500, lng: 47.2000, population: "1.2M", language: "Çuvaşça", family: "Bolgar", },
+]; 
+     const chineseSpeakingCountries = [
+  {name: "Çin Halk Cumhuriyeti", lat: 35.8617, lng: 104.1954, population: "1.412.600.000"},
+  {name: "Tayvan", lat: 23.6978, lng: 120.9605, population: "23.5 milyon"},
+  {name: "Singapur", lat: 1.3521, lng: 103.8198, population: "5.6 milyon"},
+  {name: "Hong Kong Özel İdari Bölgesi", lat: 22.3193, lng: 114.1694, population: "7.5 milyon"},
+  {name: "Makao Özel İdari Bölgesi", lat: 22.1987, lng: 113.5439, population: "0.65 milyon"}
 ];
     // Haritayı başlat
     const map = L.map('map').setView([20, 0], 2);
@@ -366,6 +373,8 @@ function getWikiUrlByLanguage(type) {
       return "https://tr.wikipedia.org/wiki/Portekizce";
     case "german":
       return "https://tr.wikipedia.org/wiki/Almanca";
+         case "chinese":
+      return "https://tr.wikipedia.org/wiki/%C3%87ince";
     case "russian":
       return "https://tr.wikipedia.org/wiki/Rusça";
     case "Turkish":
@@ -397,6 +406,8 @@ function updateMap(type) {
     countries =  russianSpeakingRegions;
   } else if (type === "Turkish") {
     countries =   turkicLanguageOfficialCountriesAndRegions;
+  } else if (type === "chinese") {
+    countries =   chineseSpeakingCountries;
   }
   
  
